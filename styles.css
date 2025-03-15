@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    text-align: center;
+}
+
+/* === HEADER === */
+header {
+    background: black;
+    padding: 15px 0;
+    position: fixed;
+    width: 100vw !important; /* Ensures full width */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* === HERO SECTION === */
+.hero {
+    width: 100vw;
+    height: 70vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    animation: slideUp 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 90%;
+    animation: slideUp 1.3s ease-in-out;
+}
+section {
+    width: 100vw;
+    padding: 50px 5%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* === Fix for Get in Touch Button Hover Issue on Slide 1 === */
+.cta-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.cta-button:hover {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* === Slide Headings & Subheadings === */
+h1 {
+    font-size: 3.5rem; /* Balanced heading size */
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.6rem; /* Slightly larger subheading */
+    font-weight: 500;
+    max-width: 80%;
+}
+
+/* Slide Buttons */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    text-align: center;
+}
+
+/* === FIXED HEADER (FULL WIDTH FIX) === */
+header {
+    background: black;
+    padding: 15px 0;
+    position: fixed;
+    width: 100vw; /* Ensures full width */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* === HERO SLIDER === */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* === Fix for Get in Touch Button Hover Issue on Slide 1 === */
+.cta-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.cta-button:hover {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* === FOOTER (USING SEPARATE CLASS p1) === */
+footer {
+    background: black;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 8px 0; /* Adjusted padding */
+}
+
+.p1 {
+    color: white;
+    font-size: 1rem; /* Now separate from subheadings */
+    text-align: center;
+    font-weight: normal;
+}
+
+/* === Animations === */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 1.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* === FOOTER (NOW FORCED TO BE SMALLER THAN SUBHEADINGS) === */
+footer {
+    background: black;
+    color: white;
+    padding: 20px; /* Further reduced padding */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    font-size: 0.9rem !important; /* Forced smaller than subheadings */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === Animations === */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 1.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

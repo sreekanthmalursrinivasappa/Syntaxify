@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntaxify - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
+                <span class="logo-text">Syntaxify</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Slideshow) -->
+    <section class="hero">
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <h1 class="fade-in">Transform Your Business with Future-Ready IT Solutions</h1>
+                <p class="fade-in">Empowering Businesses with Smart, Secure, and Scalable IT Solutions.</p>
+                <a href="contact.html" class="cta-button fade-in">Get in Touch</a>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h1 class="slide-up">WELCOME TO SYNTAXIFY</h1>
+                <p class="slide-up">At Syntaxify, we help small and mid-sized businesses harness the power of technology. From IT strategy and managed services to cybersecurity and digital transformation, we provide tailored solutions that drive growth, efficiency, and security.</p>
+                <p class="slide-up">Transform your business with expert-driven IT solutions.</p>
+                <a href="contact.html" class="cta-button slide-up">Get in Touch</a>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="p1">&copy; 2025 Syntaxify. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
