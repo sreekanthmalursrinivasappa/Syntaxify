@@ -3,91 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2575fc">
-    <title>Syntaxify - Home</title>
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Scripts -->
+    <title>About Us - Syntaxify</title>
+    <link rel="stylesheet" href="about.css">
     <script defer src="script.js"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js")
-                .then(() => console.log("Service Worker Registered"))
-                .catch(err => console.log("Service Worker Registration Failed", err));
-        }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header with Logo & Text -->
     <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
-            <span class="logo-text">Syntaxify</span>
+        <div class="header-container">
+            <!-- Logo & Brand Name -->
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
+                <span class="logo-text">Syntaxify</span>
+            </div>
+    
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="industries.html">Industries</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
 
-    <!-- Hero Section (Slideshow) -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="slider">
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <h1 class="fade-in">Transform Your Business with Future-Ready IT Solutions</h1>
-                <p class="fade-in">Empowering Businesses with Smart, Secure, and Scalable IT Solutions.</p>
-                <a href="contact.html" class="cta-button fade-in">Get in Touch</a>
+        <h1>About Us</h1>
+        <p>Empowering Every Business with Cutting-Edge IT Solutions</p>
+    </section>
+
+    <!-- Core Values - Interactive Cards -->
+    <section class="values">
+        <h2><strong></strong>Our Core Values</h2></strong></h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-users"></i>
+                <h3>Accessibility for All</h3>
+                <p>High-quality IT services for businesses of all sizes.</p>
             </div>
-            <!-- Slide 2 -->
-            <div class="slide">
-                <h1 class="slide-up">WELCOME TO SYNTAXIFY</h1>
-                <p class="slide-up">At Syntaxify, we help small and mid-sized businesses harness the power of technology. From IT strategy and managed services to cybersecurity and digital transformation, we provide tailored solutions that drive growth, efficiency, and security.</p>
-                <p class="slide-up">Transform your business with expert-driven IT solutions.</p>
-                <a href="contact.html" class="cta-button slide-up">Get in Touch</a>
+            <div class="value-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation & Excellence</h3>
+                <p>Future-proof solutions that drive business success.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-lock"></i>
+                <h3>Security & Trust</h3>
+                <p>Ensuring cybersecurity, compliance, and data protection.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Client-Centric Approach</h3>
+                <p>Tailored solutions to meet unique business needs.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Why Choose Syntaxify - Timeline Style -->
+    <section class="why-choose">
+        <h2><strong>Why Choose Syntaxify? </strong></h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Affordable IT Solutions</h3>
+                <p>We provide budget-friendly IT solutions without compromising on quality.</p>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Business-Centric Approach</h3>
+                <p>Our IT strategies align with your business goals for maximum efficiency.</p>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Advanced Cybersecurity</h3>
+                <p>We ensure robust data protection and compliance for your business.</p>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-cloud"></i>
+                <h3>Scalable Cloud Solutions</h3>
+                <p>Flexible, future-proof cloud computing solutions for seamless growth.</p>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support & Reliability</h3>
+                <p>Keeping your IT systems running smoothly.</p>
+            </div>
+            <div class="timeline-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Scalability & Growth</h3>
+                <p>Providing solutions that grow with your business.</p>
             </div>
         </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </section>
+
+    <!-- Industries We Work In - Interactive Grid -->
+    <section class="industries">
+        <h2><strong> Industries We Work In</strong></h2>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Startups</h3>
+                <p>Helping new businesses build a strong tech foundation.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Retail & E-commerce</h3>
+                <p>Secure online stores and seamless digital transactions.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-hospital"></i>
+                <h3>Healthcare & Clinics</h3>
+                <p>Ensuring compliance and data security in the medical industry.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-university"></i>
+                <h3>Finance & Banking</h3>
+                <p>Protecting sensitive financial data with top cybersecurity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <h2><i class="fas fa-bullhorn"></i> Let’s Build Your Future Together</h2>
+        <a href="contact.html" class="cta-button">Get in Touch</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p class="p1">&copy; 2025 Syntaxify. All rights reserved.</p>
+        <p>&copy; 2025 Syntaxify. All rights reserved.</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector(".nav-links");
-            nav.classList.toggle("active");
-        }
-
-        // Hide menu toggle button on desktop
-        function checkScreenSize() {
-            const toggleButton = document.querySelector(".menu-toggle");
-            if (window.innerWidth > 768) {
-                toggleButton.style.display = "none";
-            } else {
-                toggleButton.style.display = "block";
-            }
-        }
-        
-        window.addEventListener("resize", checkScreenSize);
-        document.addEventListener("DOMContentLoaded", checkScreenSize);
-    </script>
 </body>
 </html>
