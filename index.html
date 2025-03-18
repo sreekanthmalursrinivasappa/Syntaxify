@@ -74,6 +74,15 @@
         function toggleMenu() {
             const nav = document.querySelector(".nav-links");
             nav.classList.toggle("active");
+            
+            // Add animation effect
+            if (nav.classList.contains("active")) {
+                nav.style.transform = "translateY(0)";
+                nav.style.opacity = "1";
+            } else {
+                nav.style.transform = "translateY(-100%)";
+                nav.style.opacity = "0";
+            }
         }
 
         // Hide menu toggle button on desktop
