@@ -81,27 +81,6 @@ menu-toggle {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: black;
-        width: 100%;
-        text-align: center;
-        z-index: 1000;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-    }
-
     .menu-toggle {
         display: block;
         font-size: 24px;
@@ -111,6 +90,37 @@ menu-toggle {
         top: 15px;
         right: 20px;
         z-index: 1100;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+        padding: 10px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
     }
 }
 
