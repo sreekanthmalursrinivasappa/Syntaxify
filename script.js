@@ -11,7 +11,19 @@ function showSlide(index) {
         }
     });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-links");
 
+    toggleButton.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+});
+
+function toggleMenu() {
+    const nav = document.querySelector(".nav-links");
+    nav.classList.toggle("active");
+}
 // Auto-slide every 5 seconds
 function autoSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
