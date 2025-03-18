@@ -28,21 +28,36 @@
 
     <!-- Header -->
     <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
-            <span class="logo-text">Syntaxify</span>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
+                <span class="logo-text">Syntaxify</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu Toggle Button (Hidden on Desktop) -->
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-                <li><a href="about.html" onclick="closeMenu()">About Us</a></li>
-                <li><a href="services.html" onclick="closeMenu()">Services</a></li>
-                <li><a href="industries.html" onclick="closeMenu()">Industries</a></li>
-                <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
+
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-nav">
+        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="about.html" onclick="toggleMenu()">About Us</a></li>
+            <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+            <li><a href="industries.html" onclick="toggleMenu()">Industries</a></li>
+            <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section (Slideshow) -->
     <section class="hero">
@@ -72,27 +87,11 @@
 
     <script>
         function toggleMenu() {
-            const nav = document.querySelector(".nav-links");
+            const nav = document.querySelector(".mobile-nav");
             nav.classList.toggle("active");
-            
-            // Add animation effect
-            if (nav.classList.contains("active")) {
-                nav.style.transform = "translateY(0)";
-                nav.style.opacity = "1";
-            } else {
-                nav.style.transform = "translateY(-100%)";
-                nav.style.opacity = "0";
-            }
         }
 
-        function closeMenu() {
-            const nav = document.querySelector(".nav-links");
-            nav.classList.remove("active");
-            nav.style.transform = "translateY(-100%)";
-            nav.style.opacity = "0";
-        }
-
-        // Hide menu toggle button on desktop
+        // Ensure toggle button only appears on mobile
         function checkScreenSize() {
             const toggleButton = document.querySelector(".menu-toggle");
             if (window.innerWidth > 768) {
