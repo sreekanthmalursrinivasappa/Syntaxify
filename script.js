@@ -14,10 +14,32 @@ function showSlide(index) {
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
+    // Toggle menu on button click
     toggleButton.addEventListener("click", function () {
         navMenu.classList.toggle("active");
     });
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+
+    // Ensure toggle button only appears on mobile
+    function checkScreenSize() {
+        if (window.innerWidth > 768) {
+            toggleButton.style.display = "none";
+            navMenu.classList.remove("active"); // Hide menu on resize
+        } else {
+            toggleButton.style.display = "block";
+        }
+    }
+
+    window.addEventListener("resize", checkScreenSize);
+    checkScreenSize(); // Run on page load
 });
 
 function toggleMenu() {
