@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Syntaxify</title>
-    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="contact.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -13,22 +12,41 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Syntaxify Logo" class="logo">
-                <span class="logo-text">Syntaxify</span>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="industries.html">Industries</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo-container">
+            <img src="images/logo.png" alt="Syntaxify Logo" class="logo" />
+            <span class="logo-text">Syntaxify</span>
+            </a>
+    
+          <!-- Desktop Navigation -->
+          <nav class="nav-links">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+    
+          <!-- Mobile Toggle Button -->
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-    </header>
-
+      </header>
+    
+      <!-- Mobile Sidebar Navigation -->
+      <div class="mobile-nav">
+        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        <ul>
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About Us</a></li>
+          <li><a href="services.html" onclick="toggleMenu()">Services</a></li>
+          <li><a href="industries.html" onclick="toggleMenu()">Industries</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+      </div>
+    
+      <!-- Overlay -->
+      <div class="menu-overlay" onclick="toggleMenu()"></div>
     <!-- Hero Section -->
     <section class="hero">
         <h1>Contact Us</h1>
@@ -145,6 +163,12 @@
     <footer>
         <p>&copy; 2025 Syntaxify. All rights reserved.</p>
     </footer>
-
+<!-- Mobile Menu Toggle Logic -->
+<script>
+    function toggleMenu() {
+      document.querySelector(".mobile-nav").classList.toggle("active");
+      document.querySelector(".menu-overlay").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
