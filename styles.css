@@ -1,474 +1,355 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-    font-family: 'Poppins', sans-serif;
-    background: #f8f9fa;
-    color: #222;
-    text-align: center;
-    width: 100%;
-    overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  color: #222;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* === FIXED HEADER (PREVENT OVERLAP) === */
+/* === HEADER === */
 header {
-    background: black;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    height: 70px; /* Set height to prevent layout shifts */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
+  background: black;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
 }
+
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 100vw;
-    margin: 0 auto;
-    padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
+
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
 
 .logo {
-    height: 40px;
+  height: 40px;
 }
 
 .logo-text {
-    font-size: 22px;
-    font-weight: 600;
-    color: white;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
 }
 
-
+/* === NAVIGATION === */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links li a:hover {
-    color: #ffcc00;
-}
-menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 1100;
+  color: #ffcc00;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1100;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: black;
-        width: 100%;
-        text-align: center;
-        z-index: 1000;
-        padding: 10px 0;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    }
-
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-    }
-
-    .nav-links li a {
-        color: white;
-        font-size: 18px;
-        text-decoration: none;
-    }
+/* === TOGGLE BUTTON === */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
 }
 
-
-/* === HERO SECTION === */
-.hero {
-    width: 100vw;
-    height: 70vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    animation: slideUp 1s ease-in-out;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    max-width: 90%;
-    animation: slideUp 1.3s ease-in-out;
-}
-section {
-    width: 100vw;
-    padding: 50px 5%;
-    max-width: 100%;
-    margin: auto;
-}
-
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-    position: relative;
-}
-
-/* === Fix for Get in Touch Button Hover Issue on Slide 1 === */
-.cta-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: white;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    z-index: 10;
-}
-
-.cta-button:hover {
-    background: #ffcc00;
-    color: black;
-    transform: scale(1.1);
-}
-
-/* === Slide Headings & Subheadings === */
-h1 {
-    font-size: 3.5rem; /* Balanced heading size */
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-p {
-    font-size: 1.6rem; /* Slightly larger subheading */
-    font-weight: 500;
-    max-width: 80%;
-}
-
-/* === SLIDER BUTTONS FIX (POSITIONING) === */
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
-}
-
-button.prev {
-    left: 20px;
-}
-
-button.next {
-    right: 20px;
-}
-
-button.prev:hover, button.next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-@media (max-width: 768px) {
-    button.prev, button.next {
-        padding: 10px;
-        font-size: 1.5rem;
-    }
-
-    button.prev {
-        left: 10px;
-    }
-
-    button.next {
-        right: 10px;
-    }
-}
-
-
-/* === HERO SLIDER === */
-.hero {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-}
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    max-width: 70%;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 90%;
-    }
-    /* Mobile Sidebar Navigation */
+/* === MOBILE NAVIGATION === */
 .mobile-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    background: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centers menu items */
-    transition: right 0.4s ease-in-out;
-    z-index: 1000;
-    overflow-y: auto; /* Enables scrolling if content exceeds screen */
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.4s ease-in-out;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
 }
 
 .mobile-nav.active {
-    right: 0;
+  right: 0;
 }
 
 .mobile-nav ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .mobile-nav ul li {
-    padding: 15px 0;
-    width: 100%;
+  padding: 15px 0;
+  width: 100%;
 }
 
 .mobile-nav ul li a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    display: block;
-    padding: 15px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
 }
 
 .mobile-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Close Button */
 .close-menu {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
 }
 
+/* === OVERLAY === */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* === HERO SECTION === */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  animation: slideUp 1s ease-in-out;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  max-width: 90%;
+  animation: slideUp 1.3s ease-in-out;
+  line-height: 1.6;
 }
 
 .cta-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: white;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    z-index: 10;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  z-index: 10;
 }
 
 .cta-button:hover {
-    background: #ffcc00;
-    color: black;
-    transform: scale(1.1);
+  background: #ffcc00;
+  color: black;
+  transform: scale(1.1);
 }
 
+/* === SLIDER === */
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
 
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 1s ease-in-out;
+}
 
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
 
+/* === SLIDER BUTTONS === */
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
 
-/* === FOOTER (USING SEPARATE CLASS p1) === */
+button.prev {
+  left: 20px;
+}
+
+button.next {
+  right: 20px;
+}
+
+button.prev:hover,
+button.next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* === FOOTER === */
 footer {
-    background: black;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    padding: 8px 0; /* Adjusted padding */
+  background: black;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 20px;
 }
 
 .p1 {
-    color: white;
-    font-size: 1rem; /* Now separate from subheadings */
-    text-align: center;
-    font-weight: normal;
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
-/* === Animations === */
+/* === ANIMATIONS === */
 .fade-in {
-    animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .slide-up {
-    animation: slideUp 1.3s ease-in-out;
+  animation: slideUp 1.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-footer {
-    background: black;
-    color: white;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-}
-
+/* === MOBILE OVERRIDES === */
 @media (max-width: 768px) {
-    footer {
-        padding-bottom: 60px;
-    }
-}
+  .nav-links {
+    display: none !important;
+  }
 
-/* === Animations === */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
+  .menu-toggle {
+    display: block;
+  }
 
-.slide-up {
-    animation: slideUp 1.3s ease-in-out;
-}
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  button.prev,
+  button.next {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  button.prev {
+    left: 10px;
+  }
+
+  button.next {
+    right: 10px;
+  }
+
+  footer {
+    padding-bottom: 60px;
+  }
 }
