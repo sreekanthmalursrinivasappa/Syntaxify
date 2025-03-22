@@ -178,6 +178,7 @@ header {
     align-items: center;
     padding: 20px;
     animation: fadeIn 1.5s ease-in-out;
+    margin-top: 70px
 }
 
 .hero h1 {
